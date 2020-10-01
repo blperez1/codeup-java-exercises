@@ -31,7 +31,7 @@ public class ControlFlowExercises {
             System.out.println("number | squared | cubed");
             System.out.println("------ | ------- | -----");
             for (int i = 1; i <= userNumber; i += 1) {
-                System.out.printf("%-6s | %-7d | %d%n", i, i * i, i * i * i);
+                System.out.printf("%-6d | %-7d | %d%n", i, i * i, i * i * i);
             }
 
             System.out.println();
