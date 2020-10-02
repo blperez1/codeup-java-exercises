@@ -9,11 +9,11 @@ public class ControlFlowExercises {
 
             if(grade <= 100 && grade >= 88) {
                 System.out.println("Your letter grade is A");
-            }else if(grade <= 87 && grade >= 80) {
+            }else if(grade >= 80) {
                 System.out.println("Your letter grade is B");
-            }else if(grade <=79 && grade >= 67) {
+            }else if(grade >= 67) {
                 System.out.println("Your letter grade is C");
-            }else if(grade <= 66 && grade >= 60) {
+            }else if(grade >= 60) {
                 System.out.println("Your letter grade is D");
             } else {
                 System.out.println("Your letter grade is F");
@@ -21,7 +21,7 @@ public class ControlFlowExercises {
             System.out.println();
             System.out.println("Would you like to continue? (y/n)");
             answer = scanner.next();
-        }while(answer.equals("y"));
+        }while(answer.equalsIgnoreCase("y"));
 
         do {
             System.out.println("Enter a random number:");
@@ -37,7 +37,7 @@ public class ControlFlowExercises {
             System.out.println();
             System.out.println("Would you like to continue? (y/n)");
             answer = scanner.next();
-        }while(answer.equals("y") || answer.equals("yes"));
+        }while(answer.equalsIgnoreCase("y"));
 
         int w = 5;
         while(w <= 15) {
@@ -56,8 +56,7 @@ public class ControlFlowExercises {
         }while(y <= 100);
 
         for(int i = 0; i <= 100; i+=2) {
-                System.out.printf("%d%n", i);
-            
+            System.out.printf("%d%n", i);
         }
 
         int z = 100;
@@ -70,10 +69,11 @@ public class ControlFlowExercises {
             System.out.printf("%s%n", i);
         }
 
-        long n = 2;
+        int n = 2;
         do{
             System.out.println(n);
-            n *= n;
+            n = (int)Math.pow(n, 2);
+
         }while(n <=100000);
 
         for(int i = 1; i <= 100; i++) {
