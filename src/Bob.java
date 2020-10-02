@@ -5,7 +5,7 @@ public class Bob {
        String answer;
        do {
             System.out.println("Say anything to Bob:");
-            String convo = sc.nextLine();
+            String convo = sc.nextLine().trim();
             if(convo.endsWith("?")) {
                 System.out.println("Sure.");
             }else if(convo.endsWith("!")) {
