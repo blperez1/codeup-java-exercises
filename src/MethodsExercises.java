@@ -2,6 +2,12 @@ import java.util.Scanner;
 
 public class MethodsExercises {
     public static void main(String[] args) {
+        System.out.print(add(3, 2));
+        System.out.print(subtract(3, 2));
+        System.out.print(multiply(3, 2));
+        System.out.print(divide(3, 2));
+        System.out.print(remainder(3, 2));
+        System.out.print(product(3, 2));
         
     }
     
@@ -145,7 +151,7 @@ public class MethodsExercises {
         }
 
   
-        
+    }       
     
 }
 

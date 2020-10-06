@@ -1,3 +1,5 @@
+package MiniLab;
+
 public class Dish {
     int costInCents;
     String nameOfDish;
