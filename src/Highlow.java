@@ -1,25 +1,28 @@
-import java.util.Random;
+
 import java.util.Scanner;
 
 public class Highlow {
     public static void main(String[] args) {
-        Random rand = new Random();
-        Scanner sc = new Scanner(System.in);
-
-        
-
-        System.out.println("Lets play a game!");
-        System.out.println("I'm think of a number between 1 and 100. Guess What number that is.");
-        int userNum = sc.nextInt();
-
-        if(userNum > rand) {
-            System.out.println("Lower");
-        }else if (userNum < rand) {
-            System.out.println("Higher");
-        }else if(userNum == rand) {
-            System.out.println("Great Guess!");
-        }
+        Scanner scan = new Scanner(System.in);
+        int range = 100 - 1 + 1;
+        int numberToGuess = (int) ((Math.random() * range) + 1);
+        System.out.println("numberToGuess = " + numberToGuess);
+        game(numberToGuess, scan);
     }
 
 
+    public static void game(int numberToGuess, Scanner scan){
+        while(true){
+            System.out.println("Guess a number between 1 and 100");
+            short userInput = Short.parseShort(scan.nextLine());
+            if( userInput > numberToGuess){
+                System.out.println("LOWER");
+            } else if (userInput < numberToGuess){
+                System.out.println("HIGHER");
+            } else {
+                System.out.println("GOOD GUESS!");
+                break;
+            }
+        }
+    } 
 }
