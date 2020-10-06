@@ -1,5 +1,14 @@
+import java.text.NumberFormat.Style;
+
 public class Person {
     public static void main(String[] args) {
+        Person person = new Person("Jarrod");
+        System.out.println(person.getName());
+
+        person.setName("Luna");
+        person.sayHello();
+
+
     //The strings are the same but the objects are not.
         Person person1 = new Person("John");
         Person person2 = new Person("John");
@@ -37,6 +46,6 @@ public class Person {
     }
 
     public void sayHello() {
-        System.out.printf("Hello %s", this.name);
+        System.out.printf("Hello %s!%n", this.name);
     }
 }
