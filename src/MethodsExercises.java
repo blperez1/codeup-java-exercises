@@ -2,10 +2,6 @@ import java.util.Scanner;
 
 public class MethodsExercises {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-            System.out.println("Pick a number between 1 and 10");
-        
-        System.out.println(multiply2(3, 6));
         
     }
     
@@ -100,12 +96,15 @@ public class MethodsExercises {
         System.out.printf("Enter an number between %d and %d: ", min, max);
         Scanner sc = new Scanner(System.in);
         int userNum = sc.nextInt();
-        if(userNum < min || userNum > max) {
-            System.out.println("Try again.");
+        if(userNum < min ) {
+            System.out.printf("This uber is lower than %d", min);
             return getInteger(min, max);
-        }else{
-            return(userNum);
+        }else if(userNum > max){
+            System.out.printf("This number is higher than %d", max);
+            return getInteger(min, max);
         }
+            return userNum;
+        
     }
     
     public static long factorial(int n) {
@@ -115,18 +114,35 @@ public class MethodsExercises {
         return n * factorial(n - 1);
     }
 
-    public static void createDice() {
-        Scanner sc = new Scanner(System.in);
-        System.out.println("Let's play a game.\nChoose the number of sides you want on the two dice:");
-        int numberOfSides = sc.nextInt();
-
-
-        int dice1 = (int)(Math.random()*numberOfSides+1);
-        int dice2 = (int)(Math.random()*numberOfSides+1);
-
-        System.out.printf("You rolled: %d %d", dice1, dice2);
-
+    public static long factorial2() {
+        int userInput = getInteger(1, 10);
+        int count = 1;
+        for(int i = 1; i <= userInput; i++) {
+            count *= i;
+        }
+        return count; 
     }
+
+    public static void randomize(short sides){
+        System.out.println( (int) Math.floor(Math.random() * sides) );
+        System.out.println( (int) Math.floor(Math.random() * sides) );
+    }
+
+    public static void rollDice(Scanner scan){
+        int counter = 0;
+
+        while(true){
+            counter++;
+            System.out.println("Roll Dice method");
+            System.out.println("Number of sides: ");
+            short sides = Short.parseShort(scan.nextLine());
+            randomize(sides);
+            System.out.println("Do you want to continue? y/n");
+            if (scan.nextLine().equalsIgnoreCase("n")) {
+                System.out.println("Ok, bye, you played " + counter + " times");
+                break;
+            }
+        }
 
   
         
