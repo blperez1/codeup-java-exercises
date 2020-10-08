@@ -13,7 +13,7 @@ public class Input {
     }
 
     public boolean yesNo(){
-        System.out.println("Please enter yes or no");
+        System.out.println("Would you like to continue? [y/n]");
         String input = this.scanner.nextLine();
         return input.trim().equalsIgnoreCase("y") || input.trim().equalsIgnoreCase("yes");
     }
@@ -30,12 +30,18 @@ public class Input {
         }
     }
     public int getInt(){
-        System.out.println("Please enter an integer");
+        System.out.println("Choose a number");
         String input = scanner.nextLine();
         int num = Integer.parseInt(input);
         return num;
     }
 
+    public int getInt(String prompt) {
+        System.out.println(prompt);
+        String input = scanner.nextLine();
+        int num = Integer.parseInt(input);
+        return num;
+    }
     public double getDouble(double min,double max){
         while (true) {
             System.out.printf("Please enter a number between %f and %f", min, max);
