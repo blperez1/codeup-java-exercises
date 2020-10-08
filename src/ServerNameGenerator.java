@@ -26,18 +26,12 @@ public class ServerNameGenerator {
             "hour"
         };
         
-        generateName(adjectives, nouns);
+        System.out.println("Here is your server name:");
+        System.out.printf("%s-%s%n", getRandomElement(adjectives), getRandomElement(nouns));
     }
-    
-    
     
     public static String getRandomElement(String[] array) {
         Random rnd = new Random();
         return array[rnd.nextInt(array.length)];
-    }
-
-    public static void generateName(String[] adjective, String[] noun) {
-        System.out.println("Here is your server name:");
-        System.out.printf("%s-%s%n", getRandomElement(adjective), getRandomElement(noun));
     }
 }

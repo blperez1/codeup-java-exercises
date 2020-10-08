@@ -12,13 +12,17 @@ public class ArraysExercises {
         //Out of bounds. Cannot add new element that exceeds the initial length.
         // people[3] = new Person("Ellie");
 
-        for(Person x: people){
-            System.out.println(x.getName());
+        for(Person person: people){
+            System.out.println(person.getName());
         }
 
 
     }
 
-    
+    public static Person[] addPerson(Person[] arr, Person personToAdd) {
+        Person[] newArray = Arrays.copyOf(arr, arr.length + 1);
+        newArray[newArray.length - 1] = personToAdd;
+        return newArray;
+    }
 
 }
