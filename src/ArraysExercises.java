@@ -1,26 +1,24 @@
 import java.util.Arrays;
-import java.util.ArrayList;
 public class ArraysExercises {
     public static void main(String[] args) {
         int[] numbers = {1, 2, 3, 4, 5};
         System.out.println(Arrays.toString(numbers));
 
-        Person p1 = new Person();
-        Person p2 = new Person();
-        Person p3 = new Person();
+        Person[] people = new Person[3];
+        people[0] = new Person("Jarrod");
+        people[1] = new Person("Blossom");
+        people[2] = new Person("Luna");
 
-        p1.name = "Blossom";
-        p2.name = "Jarrod";
-        p3.name = "Luna";
+        //Out of bounds. Cannot add new element that exceeds the initial length.
+        // people[3] = new Person("Ellie");
 
-        String[] people = {p1.name, p2.name, p3.name};
-        System.out.println(Arrays.toString(people));
+        for(Person x: people){
+            System.out.println(x.getName());
+        }
 
-
-    }
-
-    public static String[] addPerson(String arr[], String name) {
-        List<String> arrlist = Arrays.asList(arr);
 
     }
+
+    
+
 }
