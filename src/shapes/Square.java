@@ -2,7 +2,7 @@ package shapes;
 
 public class Square extends Rectangle {
     private double side;
-    
+    // The constructor
     public Square(double side) {
         super(side, side);
         this.side = side;
