@@ -12,8 +12,8 @@ public class Input {
         return this.scanner.nextLine();
     }
 
-    public boolean yesNo(){
-        System.out.println("Would you like to continue? [y/n]");
+    public boolean yesNo(String question){
+        System.out.println(question);
         String input = this.scanner.nextLine();
         return input.trim().equalsIgnoreCase("y") || input.trim().equalsIgnoreCase("yes");
     }
