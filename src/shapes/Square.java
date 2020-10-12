@@ -5,19 +5,14 @@ public class Square extends Quadrilateral {
        super(side, side);
     }
 
-    public void setSide(double side) {
-        this.length = side;
-        this.width = side;
-    }
-
-    @Override
     public void setLength(double length) {
-        this.setSide(length);
+        this.length = length;
+        this.width = length;
     }
 
-    @Override
     public void setWidth(double width) {
-        this.setSide(length);
+        this.length = width;
+        this.width = width;
     }
 
     @Override
