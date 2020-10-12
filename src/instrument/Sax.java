@@ -31,4 +31,15 @@ public class Sax extends MusicalInstrument implements Tuneable, VolumeAdjustable
         System.out.println("Decrescendo");
     }
 
+    @Override 
+    public void tuneInstrument() {
+        System.out.println("You are off key. Tune!");
+    }
+
+    @Override
+    public void detuneInstrument() {
+        System.out.println("Standard tuning is overrated! Change key!");
+    }
+
+
 }
