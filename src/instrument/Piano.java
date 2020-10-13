@@ -32,4 +32,14 @@ public class Piano extends MusicalInstrument implements Tuneable, VolumeAdjustab
         System.out.println("Play Piano");
     }
 
+    @Override 
+    public void tuneInstrument() {
+        System.out.println("Sounds off key! You need to tune it! My ears are bleeding!");
+    }
+
+    @Override
+    public void detuneInstrument() {
+        System.out.println("Kill the piano");
+    }
+
 }
