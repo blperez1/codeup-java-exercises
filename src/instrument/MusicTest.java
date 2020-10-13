@@ -2,15 +2,37 @@ package instrument;
 
 public class MusicTest {
     public static void main(String[] args) {
-        Tuneable grandPiano = new Piano("Grand Piano", 88);
-        VolumeAdjustable altoSax = new Sax("Alto Sax", 23);
+       Piano grandPiano = new Piano("Grand Piano", 88);
+        Sax altoSax = new Sax("Alto Sax", 23);
+
+        VolumeAdjustable adjustableGrandPiano = grandPiano;
+        Tuneable tuneableGrandPiano = grandPiano;
+
+        VolumeAdjustable adjustableAltoSax = altoSax;
+        Tuneable tuneableAltoSax = altoSax;
+        
+        detuneRetune(tuneableAltoSax);
+        makeTwoStaccatoSounds(adjustableAltoSax);
+        detuneRetune(tuneableGrandPiano);
+        makeTwoStaccatoSounds(adjustableGrandPiano);
+
+        // VolumeAdjustable adj;
+        // Tuneable tune;
+
+        // adj = grandPiano;
+        // tune = grandPiano;
+
+        // detuneRetune(tune);
+        // makeTwoStaccatoSounds(adj);
+
+        // adj = altoSax;
+        // tune = altoSax;
+
+        // detuneRetune(tune);
+        // makeTwoStaccatoSounds(adj);
 
 
-
-
-        grandPiano.detuneInstrument();
-        detuneRetune(grandPiano);
-        makeTwoStaccatoSounds(altoSax);
+    
 
     }
 
