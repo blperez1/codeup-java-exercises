@@ -5,58 +5,66 @@ import util.Input;
 public class GradesApplication {
     public static void main(String[] args) {
         Input input = new Input();
+
+        HashMap<String, Student> students = new HashMap<>();
         Student isaiah = new Student("Isaiah");
         Student isabel = new Student("Isabel");
         Student marcelene = new Student("Marcelene");
         Student bryan = new Student("Bryan");
+        students.put("collgate123", isaiah);
+        students.put("peachesUnicorn", isabel);
+        students.put("mjDesigns", marcelene);
+        students.put("Anthony23", bryan);
 
-        isaiah.addGrade(90);
-        isaiah.addGrade(95);
-        isaiah.addGrade(80);
-       
+    
+        bryan.addGrade(78);
+        bryan.addGrade(90);
+        bryan.addGrade(86);
+        bryan.addGrade(78);
 
+        isabel.addGrade(89);
+        isabel.addGrade(97);
+        isabel.addGrade(86);
         isabel.addGrade(78);
-        isabel.addGrade(82);
-        isabel.addGrade(76);
 
-        marcelene.addGrade(99);
-        marcelene.addGrade(99);
-        marcelene.addGrade(60);
+        isaiah.addGrade(96);
+        isaiah.addGrade(94);
+        isaiah.addGrade(86);
+        isaiah.addGrade(84);
 
-        bryan.addGrade(70);
-        bryan.addGrade(80);
-        bryan.addGrade(100);
-
-        HashMap<Student, String> Students = new HashMap<>();
-
-        Students.put(isaiah, "collgate123");
-        Students.put(isabel, "peachesUnicorn");
-        Students.put(marcelene, "mjDesigns");
-        Students.put(bryan, "Anthony23");
+        marcelene.addGrade(83);
+        marcelene.addGrade(94);
+        marcelene.addGrade(74);
+        marcelene.addGrade(84);
+  
 
         System.out.println("Welcome");
         System.out.println("Here are the GitHub usernames of our students");
 
-        for(String values: Students.values()){
-            System.out.printf("|%s| ", values);
+        for(String key: students.keySet()){
+            System.out.printf("|%s| ", key);
         } 
-        do {
-        System.out.println("\nWhat student do you want to see more information on?");
-        String userName = input.getString();
 
-        if(Students.containsValue(userName)) { 
-            String s = Students.get(userName);
-            System.out.printf("Name: %s, Github username: %s\nAverage: %d\n",s.getName(), userName, s.getGradeAverage());
-        } else {
-            System.out.printf("Sorry, no student found with the GitHub username of \"%s\".%n", input);
-        }
-    
-        }while(input.yesNo("Would you like to see another student? [y/n]"));
+
+        boolean confirm;
+        do {
+
+        System.out.print("\nWhich student would you like more information on?");
+        String userName = input.getString();
+            if(students.containsKey(userName)) { 
+                Student selectedStudent = students.get(userName);
+                System.out.printf("Name: %s, Github username: %s%nAverage: %.2f%n", selectedStudent.getName(), userName, selectedStudent.getGradeAverage());
+            } else {
+                System.out.printf("Sorry, no student found with the GitHub username of \"%s\".%n", input);
+            }
+            confirm = input.yesNo("Would you like to see another student? [y/n]");
+        }while(confirm);
 
         System.out.println("Goodbye, and have a wonderful day!");
 
         
         
     }
+
 }
 
