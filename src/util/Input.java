@@ -31,13 +31,21 @@ public class Input {
     public int getInt(int min,int max){
         while (true) {
             System.out.printf("Please enter an integer between %d and %d", min, max);
-
-            String input = scanner.nextLine();
-            int num = Integer.parseInt(input);
-            if (num >= min && num <= max)
+            int num;
+            try {
+                String input = scanner.nextLine();
+                num = Integer.parseInt(input);
+           
+            } catch(Exception e) {
+                System.out.println("You must enter an inter.");
+                return getInt(min, max);
+            }
+            if (num >= min && num <= max) {
                 return num;
+            }
         }
     }
+
     public int getInt(){
         System.out.println("Choose a number");
         String input = scanner.nextLine();
@@ -48,8 +56,15 @@ public class Input {
     public int getInt(String prompt) {
         System.out.println(prompt);
         String input = scanner.nextLine();
-        int num = Integer.parseInt(input);
-        return num;
+        int num;
+        try {
+            num =Integer.parseInt(input);;
+        }catch(NumberFormatException nfex) {
+            System.out.println("You must enter an inter.");
+            return getInt(prompt);
+        }
+
+        return num;                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               
     }
     public double getDouble(double min,double max){
         while (true) {
